@@ -33,7 +33,7 @@ def files_sort(directory):
 
 
 if __name__ == "__main__":
-    import os, timegit push
+    import os, time
     directory = r'//RAIPO_MAIN/Mail_Exchange/'
     expansions = ['-1.rnp','(1).rnp', '.txt', '.png', '.jpg', '.JPG', '.xls', '.html', '.pdf', '.xlsx',
                   '.ppt', '.doc', '.zip', '.eml', '.xml', '.docx', '.rar', '.gif', '.odt', '.ods', '.DOC']
