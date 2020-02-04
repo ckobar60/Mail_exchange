@@ -1,4 +1,5 @@
-
+#!/usr/local/bin/python3.5m
+#-*- coding: utf-8 -*-
 def del_expansions(directory, expansions):
     for filename in os.listdir(directory):
         for expansion in expansions:
@@ -20,11 +21,22 @@ def remove_old_files(directory):
 
 def files_sort(directory):
     for filename in os.listdir(directory):
+
         if "6001000149_" and "_РайпоБежаницы-Дедовичи" in filename:
             if ".rnp" in filename:
                 os.rename(directory + filename, directory + 'Пушгоры_МСЗ/' + filename)
             else:
                 os.rename(directory + filename, directory + 'Пушгоры_МСЗ/' + filename + '.rnp')
+        
+        elif "6001000149_" and "_РайпоБежаницы-склад" in filename:
+            try:
+                if ".rnp" in filename:
+                    os.rename(directory + filename, directory + 'Пушгоры_МСЗ/' + filename)
+                else:
+                    os.rename(directory + filename, directory + 'Пушгоры_МСЗ/' + filename + '.rnp')
+            except:
+                os.remove(directory + filename)
+                
         elif "6001000149_" and "_РайпоБежаницы" in filename:
             try:
                 if ".rnp" in filename:
@@ -73,7 +85,7 @@ def files_sort(directory):
 
 if __name__ == "__main__":
     import os, time
-    directory = r'C://Users/root/Desktop/ex/'
+    directory = r'/volume1/Mail_Exchange/'
     dirs=[]
     expansions = ['-1.rnp', '(1).rnp', '(2).rnp', '(3).rnp', '(4).rnp', '(5).rnp', '.txt', '.png', '.jpg', '.JPG', '.xls', '.html', '.pdf', '.xlsx',
                   '.ppt', '.doc', '.zip', '.eml', '.xml', '.docx', '.rar', '.gif', '.odt', '.ods', '.DOC']
